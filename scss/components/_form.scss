@@ -1,0 +1,216 @@
+@import "../variables";
+@import "../mixins";
+
+%radio-check {
+  display: block;
+  position: relative;
+  margin-bottom: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+%shape {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  background: $white;
+  margin-right: 5px;
+  @extend .animate;
+
+}
+
+.checkbox {
+  @extend %radio-check;
+
+  a {
+    color: $brand-color;
+  }
+}
+
+.checkbox input,
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  @extend %shape;
+  border-radius: 2px;
+  border: 2px solid $brand-color;
+}
+
+.checkbox input:checked~.checkmark {
+  background: url(../images/check-square.svg) no-repeat 0 0;
+  background-size: 100%;
+  border: 0;
+}
+
+// .checkmark:after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
+
+// .checkbox input:checked~.checkmark:after {
+//   display: block;
+// }
+
+// .checkbox .checkmark:after {
+//   left: 4px;
+//   top: 0;
+//   width: 6px;
+//   height: 11px;
+//   border: solid $white;
+//   border-width: 0 2px 2px 0;
+//   -webkit-transform: rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+// Radio
+.radio {
+  @extend %radio-check;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.radio-mark {
+  @extend %shape;
+  @include shadow(0 0 0 2px $gray-dark inset);
+  border-radius: 50%;
+}
+
+.radio input:checked~.radio-mark {
+  @include shadow(0 0 0px 10px $brand-color inset);
+}
+
+.select-style {
+  background: $off-white url("#{$img-path}/search-dropdown.svg") no-repeat;
+  background-position: calc(100% - 10px) center;
+  margin: 0;
+  overflow: hidden;
+  padding: 2px 0;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid darken($off-white, 14);
+  @include cover(18px);
+}
+
+.select-style select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: medium none;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 5px 8px;
+  width: 100%;
+  color: $gray-dark;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .select-style select {
+    padding: 10px 10px;
+  }
+}
+
+.select-style select option {
+  background: #ebebeb none repeat scroll 0 0;
+  border: medium none;
+  color: #333333;
+  padding: 4px 0;
+}
+
+.select-style select option:hover {
+  color: #fff;
+}
+
+.select-style select:focus {
+  outline: medium none;
+  border: none;
+}
+
+.form {
+  &-label {
+    color: $black;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  &-group {
+    &:not(:last-child){
+      margin: 0 0 15px;
+    }
+  }
+
+  &-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &:not(:last-child){
+      margin: 0 0 15px;
+    }
+  }
+
+  &-control {
+    @extend .animate;
+    padding: 15px 15px;
+    border-radius: 8px;
+    resize: none;
+    border: 0;
+    color: $black;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: $white;
+    background-clip: padding-box;
+    font-weight: 400;
+
+    &:focus {
+      @include shadow(none);
+      border: 0;
+      outline: none !important;
+    }
+  }
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+.phone {
+  position: relative;
+  overflow: hidden;
+  .form-control {
+    padding: 15px 0 15px 62px !important;
+  }
+  &::before {
+    content: "+88";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    background: rgba(227, 180, 0,0.15);
+    padding: 16px 12px 9px;
+    color: $black;
+    border-radius: 8px 0 0 8px;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

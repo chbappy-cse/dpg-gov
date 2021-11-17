@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'dpmp';
+  src: url('../fonts/dpmp.woff?5asfxh') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'dpmp' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  // line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-error:before {
+  content: "\e900";
+}
+.icon-play:before {
+  content: "\e901";
+}
+.icon-email:before {
+  content: "\e902";
+}
+.icon-chat:before {
+  content: "\e903";
+}
+.icon-add:before {
+  content: "\e904";
+}
+.icon-clear:before {
+  content: "\e905";
+}
+.icon-copy:before {
+  content: "\e906";
+}
+.icon-create:before {
+  content: "\e907";
+}
+.icon-remove:before {
+  content: "\e908";
+}
+.icon-send:before {
+  content: "\e909";
+}
+.icon-money:before {
+  content: "\e90a";
+}
+.icon-arrow-down:before {
+  content: "\e90b";
+}
+.icon-arrow-left:before {
+  content: "\e90c";
+}
+.icon-arrow-right:before {
+  content: "\e90d";
+}
+.icon-arrow-up:before {
+  content: "\e90e";
+}
+.icon-circle:before {
+  content: "\e90f";
+}
+.icon-check:before {
+  content: "\e910";
+}
+.icon-user:before {
+  content: "\e911";
+}
+.icon-star:before {
+  content: "\e912";
+}
+.icon-star-half:before {
+  content: "\e913";
+}
+.icon-star-outline:before {
+  content: "\e914";
+}
+.icon-account-box:before {
+  content: "\e915";
+}
+.icon-assignment:before {
+  content: "\e916";
+}
+.icon-check-circle:before {
+  content: "\e917";
+}
+.icon-favorite:before {
+  content: "\e919";
+}
+.icon-favorite-outline:before {
+  content: "\e91a";
+}
+.icon-help:before {
+  content: "\e91b";
+}
+.icon-search:before {
+  content: "\e91c";
+}
+.icon-next:before {
+  content: "\e91d";
+}
+.icon-map:before {
+  content: "\e91e";
+}
+.icon-user-add:before {
+  content: "\e91f";
+}
+.icon-prev:before {
+  content: "\e920";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-checkbox-checked:before {
+  content: "\ea52";
+}
+.icon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.icon-radio-checked:before {
+  content: "\ea55";
+}
+.icon-radio-unchecked:before {
+  content: "\ea56";
+}
+.icon-gp:before {
+  content: "\ea8b";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-linkedin:before {
+  content: "\eaca";
+}

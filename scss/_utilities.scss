@@ -1,0 +1,256 @@
+//Alignment
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-round {
+  border-radius: 50%;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+
+  &-item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.py-5 {
+  padding: 80px 0;
+}
+
+p {
+  margin-bottom: 1.8rem;
+  line-height: 28px;
+  letter-spacing: 0.35px;
+  font-weight: normal;
+  color: $text-color;
+  font-size: 16px;
+}
+
+.common-heading {
+  font-weight: 700;
+  color: $black;
+  letter-spacing: 0.25px;
+  font-size: 54px;
+  margin-bottom: 30px;
+
+  span {
+    color: $brand-color;
+  }
+
+  &+p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+
+.animate {
+  @include animate(all 0.3s linear);
+}
+
+%extra {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.common-btn {
+  @extend .animate;
+  color: $white;
+  background: $brand-color;
+  border: none;
+  font-weight: 600;
+  padding: 20px 30px 20px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  min-width: 180px;
+  letter-spacing: 1px;
+
+  &::before {
+    @extend %extra;
+    z-index: -1;
+    background: $brand-color;
+    transform: skewX(-15deg);
+    @extend .animate;
+    left: 20px;
+
+  }
+
+  &:hover {
+    &::before {
+      transform: skewX(0deg);
+    }
+  }
+}
+
+.mask-img {
+  position: relative;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  mask-position: center;
+  background: #fff;
+  display: inline-block;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+%slick-arrow {
+  .slick {
+    &-arrow {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-40%);
+      z-index: 99;
+      color: $black;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $black;
+      line-height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      &::before {
+        font-family: 'dpmp';
+        font-size: 26px;
+        line-height: 0;
+      }
+    }
+
+    &-prev {
+      left: 0;
+
+      &::before {
+        content: '\e920';
+      }
+    }
+
+    &-next {
+      right: 0;
+
+      &::before {
+        content: '\e91d';
+      }
+    }
+  }
+
+  .slick-dots {
+    text-align: center;
+    padding: 0;
+    margin: 30px auto 0;
+
+    li {
+      display: inline-block;
+      margin: 0 5px;
+
+      button {
+        border: none;
+        font-size: 0;
+        padding: 0;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: $gray-dark;
+        cursor: pointer;
+        @extend .animate;
+      }
+
+      &.slick-active button {
+        background: $brand-color;
+      }
+    }
+
+  }
+
+}
